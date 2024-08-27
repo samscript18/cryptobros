@@ -14,10 +14,12 @@ const Navbar = () => {
   const { push } = useRouter();
 
   return (
-    <div className="w-full fixed top-0 bg-[#fff] shadow-md md:py-1 md:px-[2rem] lg:px-[4rem] z-30">
+    <div className="fixed w-screen top-0 bg-[#fff] shadow-lg md:shadow-md py-4 px-4 md:px-[2rem] lg:px-[4rem] z-30">
       <nav className="flex justify-between items-center">
         <div>
-          <h1 className="text-[1.8rem] text-primary font-bold">CryptoBros</h1>
+          <h1 className="text-[1.4rem] md:text-[1.8rem] text-primary font-bold">
+            CryptoBros
+          </h1>
         </div>
         <ul className="hidden lg:flex justify-between items-center">
           {navData.map((item) => {
@@ -46,7 +48,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div className="flex">
+        <div className="hidden md:flex">
           <Link href={"/login"}>
             <ButtonOutlined className="font-semibold">Log In</ButtonOutlined>
           </Link>
@@ -61,26 +63,24 @@ const Navbar = () => {
           {toggleMenu ? (
             <RiCloseLine
               size={27}
-              className="text-white cursor-pointer"
+              className="text-primary cursor-pointer"
               onClick={() => setToggleMenu(false)}
             />
           ) : (
             <RiMenu3Line
               size={27}
-              className="text-white cursor-pointer"
+              className="text-primary cursor-pointer"
               onClick={() => setToggleMenu(true)}
             />
           )}
         </div>
       </nav>
       {toggleMenu && (
-        <ul className="w-full absolute right-0 bg-[#1a1a1a] flex flex-col px-6 py-4 rounded-md text-center animate-scale">
+        <ul className="w-full h-auto absolute top-[102%] right-0 bg-[#fff] flex flex-col px-6 py-8 rounded-md shadow-md text-center animate-scale">
           {navData.map((item) => {
             return (
               <li
-                className={`${
-                  isActive && index === item.id ? "bg-[#262626]" : ""
-                } py-3 px-6 ${
+                className={`hover:bg-primary hover:text-[#fff]  text-secondary py-4 px-6 mb-4 duration-300 ${
                   item.id === navData.length ? "rounded-md" : "rounded-md"
                 } cursor-pointer`}
                 onClick={() => {
@@ -90,12 +90,24 @@ const Navbar = () => {
                 }}
                 key={item.id}
               >
-                <a href={`/#${item.path}`} className="text-white text-[1.3rem]">
+                <a href={`/#${item.path}`} className="text-[1.05rem]">
                   {item.title}
                 </a>
               </li>
             );
           })}
+          <div className="w-full flex justify-start items-center gap-4 mt-3">
+            <Link href={"/login"} className="w-full">
+              <ButtonOutlined className="w-full font-semibold">
+                Log In
+              </ButtonOutlined>
+            </Link>
+            <Link href={"/register"} className="w-full">
+              <ButtonContained className="w-full font-semibold">
+                Sign Up
+              </ButtonContained>
+            </Link>
+          </div>
         </ul>
       )}
     </div>

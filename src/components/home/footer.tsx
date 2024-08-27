@@ -5,7 +5,7 @@ import { footerData } from "@/lib/data/navbar.data";
 const Footer = () => {
   return (
     <div className="py-4 px-[1rem] md:px-[2rem] lg:px-[4rem] bg-gray-900">
-      <div className="flex sm:flex-row xs:flex-col justify-start items-start py-16">
+      <div className="flex md:flex-row flex-col justify-start items-start py-16">
         <div className="basis-[40%]">
           <div className="mb-6">
             <h1 className="text-[1.8rem] text-[#fff] font-bold">CryptoBros</h1>
@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
         {footerData.map(({ id, title, links }) => {
           return (
-            <div key={id} className="basis-[20%] sm:mt-0 xs:mt-8">
+            <div key={id} className="basis-[20%] md:mt-0 mt-8">
               <h3 className="text-[#fff] font-bold">{title}</h3>
               {links.map(({ title, url }, index) => {
                 return (
@@ -35,13 +35,13 @@ const Footer = () => {
         })}
       </div>
       <div className="w-full border-primary border-t pt-8">
-        <div className="flex sm:flex-row xs:flex-col justify-start items-center">
-          <div className="w-full xs:text-center sm:text-start">
+        <div className="flex md:flex-row flex-col-reverse justify-start items-center">
+          <div className="w-full text-center md:text-start md:mt-0 mt-3">
             <h3 className="text-[#fff] font-light">
               &copy; 2024 CryptoBrothers. All Rights Reserved
             </h3>
           </div>
-          <div className="w-full flex sm:justify-end xs:justify-center items-end md:mt-0 mt-3">
+          <div className="w-full flex md:justify-end justify-center items-end">
             <h3 className="text-[#fff] font-light mr-4">Privacy Policy</h3>
             <h3 className="text-[#fff] font-light">Terms of Use</h3>
           </div>

@@ -11,8 +11,8 @@ const Advanced = () => {
       <div className="flex flex-col">
         <Title title="Next Level" text="For Advanced Users" />
       </div>
-      <div className="grid md:grid-cols-2 gap-4 mt-[4rem]">
-        <div className="w-full h-[450px] flex justify-between items-center bg-gray-900 col-span-2 rounded-2xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[4rem]">
+        <div className="w-full h-auto md:h-[450px] flex flex-col md:flex-row justify-between items-center bg-gray-900 col-span-2 rounded-2xl">
           <div className="flex flex-col py-4 px-6 max-w-[600px]">
             <div className="flex justify-start items-center mb-4">
               <IoIosFlash size={15} className="text-[#fff] mr-3" />

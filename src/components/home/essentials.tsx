@@ -17,8 +17,8 @@ const Essentials = () => {
       <div className="flex flex-col">
         <Title title="Essentials" text="For Everyday Use" />
       </div>
-      <div className="grid md:grid-cols-2 gap-4 mt-[4rem]">
-        <div className="w-full h-[450px] flex justify-between items-center bg-gray-100 col-span-2 rounded-2xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-[4rem]">
+        <div className="w-full h-auto md:h-[450px] flex flex-col md:flex-row justify-between items-center bg-gray-100 col-span-1 md:col-span-2 rounded-2xl">
           <div className="flex flex-col py-4 px-6 max-w-[600px]">
             <div className="flex justify-start items-center mb-4">
               <MdOutlineShoppingCartCheckout
@@ -50,8 +50,8 @@ const Essentials = () => {
             className="w-[600px] h-full rounded-e-2xl"
           />
         </div>
-        <div className="w-full h-[450px] flex justify-between items-end bg-yellow-100 col-span-1 rounded-2xl">
-          <div className="flex flex-col py-4 px-6 max-w-[400px] pb-[6.5rem]">
+        <div className="w-full h-auto md:h-[450px] flex flex-col md:flex-row justify-between items-end bg-yellow-100 col-span-1 rounded-2xl">
+          <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[6.5rem]">
             <div className="flex justify-start items-center mb-4">
               <GiReceiveMoney size={15} className="text-primary mr-3" />
               <p className="text-secondary text-[.85rem]">Invest and earn</p>
@@ -78,8 +78,8 @@ const Essentials = () => {
             className="w-[280px] h-[300px] rounded-e-2xl"
           />
         </div>
-        <div className="w-full h-[450px] flex justify-between items-end bg-gray-100 col-span-1 rounded-2xl">
-          <div className="flex flex-col py-4 px-6 max-w-[400px] pb-[5.5rem]">
+        <div className="w-full h-auo md:h-[450px] flex flex-col md:flex-row justify-between items-end bg-gray-100 col-span-1 rounded-2xl">
+          <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[5.5rem]">
             <div className="flex justify-start items-center mb-4">
               <MdOutlineWallet size={15} className="text-primary mr-3" />
               <p className="text-secondary text-[.85rem]">Wallet</p>

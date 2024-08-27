@@ -4,8 +4,8 @@ import ctaImg from "@/public/images/cta-img.webp";
 
 const CTA = () => {
   return (
-    <div className="py-4 px-[1rem] md:px-[2rem] lg:px-[4rem] bg-primary">
-      <div className="flex justify-between items-center">
+    <div className="py-8 md:py-4 px-[1rem] md:px-[2rem] lg:px-[4rem] bg-primary">
+      <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="max-w-[800px]">
           <h1 className="pb-4 text-[2.5rem] text-[#fff] font-extrabold">
             Open your account now
