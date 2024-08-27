@@ -1,16 +1,42 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { FaFacebookF, FaGooglePlusG, FaLinkedinIn } from "react-icons/fa6";
+'use client';
+import { useRouter } from 'next/navigation';
+import { FaFacebookF, FaGooglePlusG, FaLinkedinIn } from 'react-icons/fa6';
+import { useForm } from 'react-hook-form';
+import { useMutation } from '@tanstack/react-query';
+import * as authService from '@/lib/services/auth.service';
+
+type Inputs = {
+  email: string;
+  password: string;
+  name: string;
+  confirmPassword: string;
+};
 
 const SignUp = () => {
   const { push } = useRouter();
   const handleSignupClick = () => {
-    push("/");
+    push('/');
+  };
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit = async (e: Inputs) => {
+    await useMutation({
+      mutationKey: ['useRegister'],
+      mutationFn: async () => authService.signUp(e),
+      onSuccess() {
+        console.log('sign up successful');
+      },
+    });
   };
 
   return (
     <div className="form-container sign-up">
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Create Account</h1>
         <div className="social-icons">
           <a href="#" className="icon">
@@ -24,10 +50,26 @@ const SignUp = () => {
           </a>
         </div>
         <span>Or Sign-Up with Your Email</span>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email Address" />
-        <input type="password" placeholder="Password" />
-        <input type="password" placeholder="Confirm password" />
+        <input
+          type="text"
+          placeholder="Name"
+          {...register('name', { required: true })}
+        />
+        <input
+          type="email"
+          placeholder="Email Address"
+          {...register('email', { required: true })}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          {...register('password', { required: true })}
+        />
+        <input
+          type="password"
+          placeholder="Confirm password"
+          {...register('confirmPassword', { required: true })}
+        />
         <button>Sign-up</button>
       </form>
       <div className="toggle-container">
