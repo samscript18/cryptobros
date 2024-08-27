@@ -35,14 +35,14 @@ const Header = () => {
               </p>
             </div>
           </div>
-          <ButtonContained className="w-full mt-[3rem] md:mt-10 font-semibold">
+          <ButtonContained className="w-full md:w-[120px] mt-[3rem] md:mt-10 font-semibold">
             Start Now
           </ButtonContained>
         </div>
         <Image
           src={header_img}
           alt="header-img"
-          className="md:w-[600px] md:h-[500px]"
+          className="md:w-[400px] md:h-[300px] lg:w-[600px] lg:h-[500px]"
         />
       </div>
     </header>

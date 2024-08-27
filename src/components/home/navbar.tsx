@@ -48,7 +48,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <div className="hidden md:flex">
+        <div className="hidden md:flex md:mr-[-25rem] lg:mr-0">
           <Link href={"/login"}>
             <ButtonOutlined className="font-semibold">Log In</ButtonOutlined>
           </Link>

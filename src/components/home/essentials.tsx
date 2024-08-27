@@ -51,7 +51,7 @@ const Essentials = () => {
           />
         </div>
         <div className="w-full h-auto md:h-[450px] flex flex-col md:flex-row justify-between items-end bg-yellow-100 col-span-1 rounded-2xl">
-          <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[6.5rem]">
+          <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[4.5rem] lg:pb-[6.5rem]">
             <div className="flex justify-start items-center mb-4">
               <GiReceiveMoney size={15} className="text-primary mr-3" />
               <p className="text-secondary text-[.85rem]">Invest and earn</p>
@@ -75,11 +75,11 @@ const Essentials = () => {
           <Image
             src={essentialImg2}
             alt="buy and sell img"
-            className="w-[280px] h-[300px] rounded-e-2xl"
+            className="md:w-[200px] md:h-[250px] lg:w-[280px] lg:h-[350px] rounded-e-2xl"
           />
         </div>
-        <div className="w-full h-auo md:h-[450px] flex flex-col md:flex-row justify-between items-end bg-gray-100 col-span-1 rounded-2xl">
-          <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[5.5rem]">
+        <div className="w-full h-auto md:h-[450px] flex flex-col md:flex-row justify-between items-end bg-gray-100 col-span-1 rounded-2xl">
+          <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[4.5rem] lg:pb-[5.5rem]">
             <div className="flex justify-start items-center mb-4">
               <MdOutlineWallet size={15} className="text-primary mr-3" />
               <p className="text-secondary text-[.85rem]">Wallet</p>
@@ -103,7 +103,7 @@ const Essentials = () => {
           <Image
             src={essentialImg3}
             alt="wallet img"
-            className="w-[280px] h-[350px] rounded-e-2xl"
+            className="md:w-[200px] md:h-[250px] lg:w-[280px] lg:h-[350px] rounded-e-2xl"
           />
         </div>
       </div>
