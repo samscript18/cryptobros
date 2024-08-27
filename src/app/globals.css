@@ -2,32 +2,269 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+#header {
+  background: radial-gradient(
+      27.03% 47.61% at 1.51% 57.5%,
+      rgba(255, 230, 215, 0.3) 0%,
+      rgba(255, 222, 201, 0) 100%
+    ),
+    radial-gradient(
+      36.09% 79.43% at 100% 105%,
+      rgba(0, 70, 225, 0.1) 0%,
+      rgba(0, 70, 225, 0) 100%
+    ),
+    linear-gradient(0deg, #f8f8fa 0%, #ffffff 77.56%);
+}
+
+.bgColor {
+  background: linear-gradient(92.31deg, #e6ebff 5.77%, #e7f9fd 98.75%);
+}
+
+*::-webkit-scrollbar {
+  background-color: transparent;
+  width: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #2563eb;
+  border-radius: 20px;
+}
+.authBody {
+  background-color: #c9d6ff;
+  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 20px 10px 150px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+  padding: 20px 20px;
+}
+
+.container a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+.container button {
+  background-color: #2da0a8;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.container input {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+.container select {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+.social-icons a {
+  border: 1px solid #ccc;
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+}
+.social-icons a:hover {
+  background-color: #f4bb4f;
+  border: none;
+  transition: 1s;
+  color: #fff;
+}
+@media only screen and (max-width: 790px) {
+  .container {
+    min-height: 720px;
+    width: 480px;
+  }
+  .container form {
+    width: 480px;
+    padding: 80px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.sign-up {
+  left: 0;
+  width: 50%;
+  z-index: 1;
+}
+@media only screen and (max-width: 790px) {
+  .sign-up {
+    top: 300px;
+    height: 50%;
+  }
+  .toggle-container {
+    height: 300px;
+    top: -350px;
+    overflow: hidden;
+    width: 480px;
+    left: 0;
+    border-radius: 0px 0px 0px 0px;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+h1 {
+  padding: 20px 20px;
+}
+
+.sign-in {
+  left: 1;
+  width: 50%;
+  z-index: 2;
+}
+.password {
+  width: 100%;
+  position: relative;
+  align-items: center;
+  display: flex;
+}
+
+.password i {
+  position: absolute;
+  left: 90%;
+}
+.Forget {
+  color: #ffbf00 !important;
+  font-weight: bold;
+  line-height: 1rem;
+  cursor: pointer;
+}
+.Forget:hover {
+  color: #f4bb4f !important;
+  transition: 1s;
+  opacity: 0.5;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 380px;
+  width: 400px;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  border-radius: 150px 0 0 100px;
+  z-index: 1000;
+}
+.toggle {
+  background-color: #2da0a8;
+  height: 100%;
+  background: linear-gradient(to right, #5c6bc0, #2da0a8);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  width: 200%;
+}
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+}
+.toggle-right {
+  right: 0;
+}
+
+@media only screen and (max-width: 790px) {
+  .sign-in {
+    top: 300px;
+    height: 50%;
   }
+  .toggle-container {
+    height: 300px;
+    top: -350px;
+    overflow: hidden;
+    width: 480px;
+    left: 0;
+    border-radius: 0px 0px 0px 0px;
+  }
+}
+
+.verify {
+  margin-top: 30px !important;
+  width: 40% !important;
+  height: 10%;
+}
+
+.forget-password {
+  width: 100%;
 }
