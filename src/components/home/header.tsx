@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header
       id="header"
-      className="mt-[6.5rem] md:mt-[7rem] px-[1rem] md:px-[2rem] lg:px-[4rem] pb-[4rem]"
+      className="mt-[5rem] md:mt-[7rem] px-[1rem] md:px-[2rem] lg:px-[4rem] pb-[4rem]"
     >
       <div className="flex flex-col md:flex-row justify-between items-center mt-6">
         <div className="w-full md:max-w-[800px] mb-[4rem] md:mb-0">
