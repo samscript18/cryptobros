@@ -13,6 +13,7 @@ import essentialImg2 from "@/public/images/earn-img.webp";
 import essentialImg3 from "@/public/images/wallet-img.webp";
 import { GiReceiveMoney } from "react-icons/gi";
 import { useRouter } from "next/navigation";
+import CountdownTimer from "./time-unit";
 
 const Essentials = () => {
   const { push } = useRouter();
@@ -80,6 +81,7 @@ const Essentials = () => {
                   className="text-primary inline-flex"
                 />
               </ButtonOutlined>
+              <CountdownTimer />
             </div>
           </div>
           <Image
@@ -92,7 +94,9 @@ const Essentials = () => {
           <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[4.5rem] lg:pb-[5.5rem]">
             <div className="flex justify-start items-center mb-4">
               <MdOutlineWallet size={15} className="text-primary mr-3" />
-              <p className="text-secondary text-[.85rem]">Bet On Live Matches</p>
+              <p className="text-secondary text-[.85rem]">
+                Bet On Live Matches
+              </p>
             </div>
             <h1 className="pb-4 text-[2rem] text-secondary font-bold">
               Bet on Bitcoin, predict matches, stake odds
@@ -112,6 +116,7 @@ const Essentials = () => {
                   className="text-primary inline-flex"
                 />
               </ButtonOutlined>
+               <CountdownTimer />
             </div>
           </div>
           <Image
