@@ -41,7 +41,7 @@ const Essentials = () => {
             <div>
               <ButtonOutlined
                 className="bg-[#fff] border-none font-semibold text-[.85rem] mt-4"
-                onClick={() => push("/register")}
+                onClick={() => push('/register')}
               >
                 Start Trading
                 <MdArrowForward
@@ -67,12 +67,12 @@ const Essentials = () => {
               Earn in passive income
             </h1>
             <p className="text-secondary text-[1rem]">
-              Make money effortlessly using your cryptocurrency or invest
+              Invest $1000 dollars to earn 1btc metaverse Bitcoin
             </p>
             <div>
               <ButtonOutlined
                 className="bg-[#fff] border-none font-semibold text-[.85rem] mt-4"
-                onClick={() => push("/register")}
+                onClick={() => push('/register')}
               >
                 Start Earning
                 <MdArrowForward
@@ -92,20 +92,21 @@ const Essentials = () => {
           <div className="flex flex-col py-4 px-6 max-w-[400px] md:pb-[4.5rem] lg:pb-[5.5rem]">
             <div className="flex justify-start items-center mb-4">
               <MdOutlineWallet size={15} className="text-primary mr-3" />
-              <p className="text-secondary text-[.85rem]">Wallet</p>
+              <p className="text-secondary text-[.85rem]">Bet On Live Matches</p>
             </div>
             <h1 className="pb-4 text-[2rem] text-secondary font-bold">
-              Store, send and receive crypto currencies
+              Bet on Bitcoin, predict matches, stake odds
             </h1>
             <p className="text-secondary text-[1rem]">
-              Create your free wallet
+              Bet on matches through Bitcoin and get paid in crypto and other
+              currencies of your choice
             </p>
             <div>
               <ButtonOutlined
                 className="bg-[#fff] border-none font-semibold text-[.85rem] mt-4"
-                onClick={() => push("/register")}
+                onClick={() => push('/register')}
               >
-                Open your free wallet
+                Begin Now
                 <MdArrowForward
                   size={20}
                   className="text-primary inline-flex"
@@ -121,6 +122,6 @@ const Essentials = () => {
         </div>
       </div>
     </div>
-  );
+  )
 };
 export default Essentials;
