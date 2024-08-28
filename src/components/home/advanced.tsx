@@ -1,11 +1,15 @@
+"use client";
+
 import Title from "../ui/title";
-import { ButtonContained, ButtonOutlined } from "../ui/buttons";
+import { ButtonOutlined } from "../ui/buttons";
 import Image from "next/image";
 import advancedImg1 from "@/public/images/pro-img.webp";
 import { IoIosFlash } from "react-icons/io";
 import { MdArrowForward } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const Advanced = () => {
+  const { push } = useRouter();
   return (
     <div className="py-[2rem] px-[1rem] md:px-[2rem] lg:px-[4rem]">
       <div className="flex flex-col">
@@ -26,7 +30,10 @@ const Advanced = () => {
               interface
             </p>
             <div>
-              <ButtonOutlined className="bg-[#fff] border-none font-semibold text-[.85rem] mt-4">
+              <ButtonOutlined
+                className="bg-[#fff] border-none font-semibold text-[.85rem] mt-4"
+                onClick={() => push("/register")}
+              >
                 Learn More
                 <MdArrowForward
                   size={20}
