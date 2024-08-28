@@ -1,6 +1,7 @@
-import Image from "next/image";
-import { ButtonOutlined } from "../ui/buttons";
-import ctaImg from "@/public/images/cta-img.webp";
+import Image from 'next/image';
+import { ButtonOutlined } from '../ui/buttons';
+import ctaImg from '@/public/images/cta-img.webp';
+import Link from 'next/link';
 
 const CTA = () => {
   return (
@@ -14,9 +15,11 @@ const CTA = () => {
             Register on the world&#39;s easiest, safest, and most complete
             platform
           </p>
-          <ButtonOutlined className="mt-10 bg-[#fff] text-[.90rem] font-bold">
-            Start Now
-          </ButtonOutlined>
+          <Link href="/register">
+            <ButtonOutlined className="mt-10 bg-[#fff] text-[.90rem] font-bold">
+              Start Now
+            </ButtonOutlined>
+          </Link>
         </div>
         <div>
           <Image

@@ -1,7 +1,8 @@
-import Image from "next/image";
-import { ButtonContained } from "../ui/buttons";
-import header_img from "@/public/images/header-img.webp";
-import { FaRegCircleCheck } from "react-icons/fa6";
+import Image from 'next/image';
+import { ButtonContained } from '../ui/buttons';
+import header_img from '@/public/images/header-img.webp';
+import { FaRegCircleCheck } from 'react-icons/fa6';
+import Link from 'next/link';
 
 const Header = () => {
   return (
@@ -35,9 +36,11 @@ const Header = () => {
               </p>
             </div>
           </div>
-          <ButtonContained className="w-full md:w-[120px] mt-[3rem] md:mt-10 font-semibold">
-            Start Now
-          </ButtonContained>
+          <Link href="/register">
+            <ButtonContained className="w-full md:w-[120px] mt-[3rem] md:mt-10 font-semibold">
+              Start Now
+            </ButtonContained>
+          </Link>
         </div>
         <Image
           src={header_img}

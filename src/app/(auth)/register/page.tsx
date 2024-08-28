@@ -6,6 +6,8 @@ import { useMutation } from '@tanstack/react-query';
 import * as authService from '@/lib/services/auth.service';
 import { SignUpDto } from '@/lib/schema/dtos';
 import { ButtonContained } from '@/components/ui/buttons';
+import { errorHandler } from '@/lib/utils';
+import toast from 'react-hot-toast';
 
 type Inputs = {
   email: string;
@@ -30,7 +32,12 @@ const SignUp = () => {
     mutationKey: ['useRegister'],
     mutationFn: async (e: SignUpDto) => authService.signUp(e),
     onSuccess() {
-      console.log('sign up successful');
+      toast.success('Registration successful');
+      push('/login');
+    },
+    onError(error) {
+      console.log(error);
+      errorHandler(error);
     },
   });
 

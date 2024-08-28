@@ -1,11 +1,13 @@
 'use client';
 
 import { ButtonContained } from '@/components/ui/buttons';
+import { errorHandler } from '@/lib/utils';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { FaFacebookF, FaGooglePlusG, FaLinkedinIn } from 'react-icons/fa6';
 
 type Inputs = {
@@ -33,12 +35,15 @@ const SignIn = () => {
       const res = await signIn('credentials', { ...e, redirect: false });
 
       if (!res?.ok) {
+        toast.error('Login Failed');
         return null;
       }
-      alert('Welcome');
+
+      toast.success('Login Successful');
       window.location.href = '/';
     } catch (error) {
-      alert(String(error));
+      toast.error('Login Failed');
+      throw error;
     } finally {
       setIsLoading(false);
     }
@@ -60,7 +65,11 @@ const SignIn = () => {
           </a>
         </div>
         <span>or Login with Your Email</span>
-        <input type="email" placeholder="Email" />
+        <input
+          type="email"
+          placeholder="Email"
+          {...register('email', { required: true })}
+        />
         <div className="password">
           <input
             type={isPasswordVisible ? 'text' : 'password'}
@@ -68,6 +77,7 @@ const SignIn = () => {
             placeholder="Password"
             required
             maxLength={22}
+            {...register('password', { required: true })}
           />
           <i
             onClick={togglePasswordVisibility}
