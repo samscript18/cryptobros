@@ -5,7 +5,7 @@ const Advanced = () => {
   return (
     <div className="py-8 px-[1rem] md:px-[2rem] lg:px-[4rem]">
       <div className="flex flex-col">
-        <Title title="Why CryptoBros" text="Sleep peacefully with CryptoBros" />
+        <Title title="Why CryptoBrothers" text="Sleep peacefully with CryptoBrothers" />
         <div className="flex flex-col md:flex-row justify-between items-center mt-[3rem] gap-12 md:mb-0 mb-8">
           {servicesData.map((service) => {
             return (

@@ -6,7 +6,7 @@ export const servicesData = [
   {
     id: 1,
     icon: <MdLock size={25} className="text-primary" />,
-    text: "Your money is protected at CryptoBros",
+    text: "Your money is protected at CryptoBrothers",
     desc: "We protect your money with multiple layers of security",
   },
   {

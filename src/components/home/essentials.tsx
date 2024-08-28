@@ -106,7 +106,7 @@ const Essentials = () => {
                 className="bg-[#fff] border-none font-semibold text-[.85rem] mt-4"
                 onClick={() => push('/register')}
               >
-                Begin Now
+                Bet Now
                 <MdArrowForward
                   size={20}
                   className="text-primary inline-flex"
