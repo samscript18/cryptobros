@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes } from "react";
-import { BiLoaderAlt } from "react-icons/bi";
+import { ButtonHTMLAttributes } from 'react';
+import { BiLoaderAlt } from 'react-icons/bi';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 interface User {
   email: string;
-  password: string;
+  password?: string;
   userName: string;
   name: string;
 }

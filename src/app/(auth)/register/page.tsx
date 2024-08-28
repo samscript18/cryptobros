@@ -4,6 +4,8 @@ import { FaFacebookF, FaGooglePlusG, FaLinkedinIn } from 'react-icons/fa6';
 import { useForm } from 'react-hook-form';
 import { useMutation } from '@tanstack/react-query';
 import * as authService from '@/lib/services/auth.service';
+import { SignUpDto } from '@/lib/schema/dtos';
+import { ButtonContained } from '@/components/ui/buttons';
 
 type Inputs = {
   email: string;
@@ -24,14 +26,16 @@ const SignUp = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
+  const { mutateAsync, isPending: signUpPending } = useMutation({
+    mutationKey: ['useRegister'],
+    mutationFn: async (e: SignUpDto) => authService.signUp(e),
+    onSuccess() {
+      console.log('sign up successful');
+    },
+  });
+
   const onSubmit = async (e: Inputs) => {
-    await useMutation({
-      mutationKey: ['useRegister'],
-      mutationFn: async () => authService.signUp(e),
-      onSuccess() {
-        console.log('sign up successful');
-      },
-    });
+    await mutateAsync(e);
   };
 
   return (
@@ -70,8 +74,21 @@ const SignUp = () => {
           placeholder="Confirm password"
           {...register('confirmPassword', { required: true })}
         />
-        <button>Sign-up</button>
+        <ButtonContained
+          disabled={
+            !!(
+              errors.name ||
+              errors.email ||
+              errors.confirmPassword ||
+              errors.password
+            )
+          }
+          loading={signUpPending}
+        >
+          Sign Up
+        </ButtonContained>
       </form>
+
       <div className="toggle-container">
         <div className="toggle">
           <div className="toggle-panel toggle-right">

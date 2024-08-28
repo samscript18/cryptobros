@@ -1,8 +1,10 @@
 import { hashPassword } from '@/lib/utils';
+import { connectDb } from '@/lib/utils/db';
 import { userModel } from '@/models/userModel';
 
 export async function POST(request: Request) {
   try {
+    await connectDb();
     const { email, password, name } = await request.json();
 
     const prevUser = await userModel.findOne({
