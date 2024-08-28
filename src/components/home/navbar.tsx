@@ -18,7 +18,7 @@ const Navbar = () => {
       <nav className="flex justify-between items-center">
         <div>
           <h1 className="text-[1.4rem] md:text-[1.8rem] text-primary font-bold">
-            CryptoBros
+            CryptoBrothers
           </h1>
         </div>
         <ul className="hidden lg:flex justify-between items-center">

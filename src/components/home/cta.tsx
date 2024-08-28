@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { ButtonOutlined } from "../ui/buttons";
 import ctaImg from "@/public/images/cta-img.webp";
+import { useRouter } from "next/navigation";
 
 const CTA = () => {
+  const { push } = useRouter();
   return (
     <div className="py-8 md:py-4 px-[1rem] md:px-[2rem] lg:px-[4rem] bg-primary">
       <div className="flex flex-col md:flex-row justify-between items-center">
@@ -14,7 +18,10 @@ const CTA = () => {
             Register on the world&#39;s easiest, safest, and most complete
             platform
           </p>
-          <ButtonOutlined className="mt-10 bg-[#fff] text-[.90rem] font-bold">
+          <ButtonOutlined
+            className="mt-10 bg-[#fff] text-[.90rem] font-bold"
+            onClick={() => push("/register")}
+          >
             Start Now
           </ButtonOutlined>
         </div>

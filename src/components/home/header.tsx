@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import { ButtonContained } from "../ui/buttons";
 import header_img from "@/public/images/header-img.webp";
 import { FaRegCircleCheck } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const { push } = useRouter();
   return (
     <header
       id="header"
@@ -35,7 +39,10 @@ const Header = () => {
               </p>
             </div>
           </div>
-          <ButtonContained className="w-full md:w-[120px] mt-[3rem] md:mt-10 font-semibold">
+          <ButtonContained
+            className="w-full md:w-[120px] mt-[3rem] md:mt-10 font-semibold"
+            onClick={() => push("/register")}
+          >
             Start Now
           </ButtonContained>
         </div>

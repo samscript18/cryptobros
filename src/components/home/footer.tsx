@@ -8,7 +8,9 @@ const Footer = () => {
       <div className="flex md:flex-row flex-col justify-start items-start py-16">
         <div className="basis-[40%]">
           <div className="mb-6">
-            <h1 className="text-[1.8rem] text-[#fff] font-bold">CryptoBros</h1>
+            <h1 className="text-[1.8rem] text-[#fff] font-bold">
+              CryptoBrothers
+            </h1>
           </div>
           <p className="text-[#fff] font-light">CryptoBrothers 2024</p>
           <p className="text-[#fff] font-light">All Rights Reserved &copy;</p>
