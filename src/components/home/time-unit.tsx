@@ -3,7 +3,7 @@ import React from 'react'
 const CountdownTimer: React.FC = () => {
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg mt-10 ml-9 max-w-sm mx-auto">
+    <div className="bg-white p-6 rounded-lg shadow-lg mt-10  max-w-sm mx-auto">
       <h1 className="text-2xl font-bold mb-4 text-center">Event Countdown</h1>
       <div className="flex space-x-4 justify-center text-4xl font-semibold mb-6 sm:text-4xl">
         <div className="flex flex-col items-center">
