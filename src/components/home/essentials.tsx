@@ -81,7 +81,7 @@ const Essentials = () => {
                   className="text-primary inline-flex"
                 />
               </ButtonOutlined>
-              <CountdownTimer />
+              {/* <CountdownTimer /> */}
             </div>
           </div>
           <Image
@@ -116,7 +116,7 @@ const Essentials = () => {
                   className="text-primary inline-flex"
                 />
               </ButtonOutlined>
-               <CountdownTimer />
+               {/* <CountdownTimer /> */}
             </div>
           </div>
           <Image
